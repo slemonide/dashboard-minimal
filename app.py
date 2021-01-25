@@ -4,6 +4,7 @@ import dash_html_components as html
 import dash_core_components as dcc
 from dash.dependencies import Input, Output, State
 from dash.exceptions import PreventUpdate
+from sys import exit
 
 from flask import Flask
 
@@ -27,6 +28,10 @@ app.layout = html.Div([
 def increment_count(data):
     data['clicks'] = data['clicks'] + 1
 
+    # Let's make it crash when we get >10 clicks:
+    if data['clicks'] > 10:
+        exit()
+    
     return data
 
 def clear_count(data):
