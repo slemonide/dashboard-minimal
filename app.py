@@ -30,7 +30,7 @@ def increment_count(data):
 
     # Let's make it crash when we get >10 clicks:
     if data['clicks'] > 10:
-        exit()
+        100/0
     
     return data
 
