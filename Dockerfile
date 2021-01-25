@@ -14,4 +14,4 @@ RUN pip3 install -r requirements.txt
 COPY app.py /wd/
 
 # Command to run this program
-CMD [ "gunicorn", "--workers=5", "--threads=1", "-b 0.0.0.0:8000", "app:server"]
+ENTRYPOINT [ "gunicorn", "--workers=5", "--threads=1", "-b 0.0.0.0:8000", "app:server"]
